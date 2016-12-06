@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Various Node ignoramuses.
 
 logs
@@ -64,3 +65,6 @@ Temporary Items
 
 # Ignore changes to the custom css files.
 /css/custom.css
+=======
+node_modules/
+>>>>>>> babd05c289e74670e209bc6a80be0c40acb654b3

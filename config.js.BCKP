@@ -1,0 +1,110 @@
+/* Magic Mirror Config Sample
+ *
+ * By Michael Teeuw http://michaelteeuw.nl
+ * MIT Licensed.
+ */
+
+var config = {
+	port: 8080,
+
+	language: 'sv',
+	timeFormat: 24,
+	units: 'metric',
+
+	modules: [
+		{
+			module: 'alert',
+		},
+		{
+			module: 'clock',
+			position: 'top_left'
+		},
+		{
+			module: 'calendar',
+			header: 'Kalender',
+			position: 'top_left',
+			config: {
+				calendars: [
+					{
+						symbol:'fa fa-rebel',
+						url: 'https://calendar.google.com/calendar/ical/matnils%40gmail.com/private-d359c4fe3f55dd5e34f98c87aed13aad/basic.ics'
+					},
+                                      {
+                                                symbol:'fa fa-futbol-o',
+                                                url: 'https://calendar.google.com/calendar/ical/jakob.nilsson.te15c%40gmail.com/private-f8fa9d1cbc5274d6c991d1bc367f4ed0/basic.ics'
+                                        }
+
+				]
+			}
+		},
+		{
+			module: 'compliments',
+			position: 'lower_third'
+		},
+		{
+			module: 'currentweather',
+			position: 'top_right',
+			config: {
+				location: 'Gråbo',
+				locationID: '2711451',  //ID from http://www.openweathermap.org
+				appid: 'f64f47a1f98da77edf43d6a2d0059053'
+			}
+		},
+		{
+			module: 'weatherforecast',
+			position: 'top_right',
+			header: 'Kommande Väder',
+			config: {
+	            location: 'Gråbo',
+				locationID: '2711451',  //ID from http://www.openweathermap.org
+	            appid: 'f64f47a1f98da77edf43d6a2d0059053'
+			}
+		},
+		{
+			module: 'newsfeed',
+			position: 'bottom_bar',
+			config: {
+				feeds: [
+                                        {
+                                                title: "New York Times",
+                                                url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+                                        },
+                                        {
+                                                title: "Feber.se",
+                                                url: "http://feber.se/rss/"
+                                        },
+                                        {
+                                                title: "Tjock.se",
+                                                url: "http://tjock.se/rss"
+                                        },
+                                        {
+                                               title: "GP.se",
+                                                url: "http://www.gp.se/?rss"
+                                        },
+                                        {
+                                                title: "Aftonbladet",
+                                                url: "http://www.aftonbladet.se/rss.xml"
+                                        }        
+				],
+				showSourceTitle: true,
+				showPublishDate: true
+			}
+		},
+    {
+        module: "MMM-ResRobot",
+        position: "bottom_bar",
+        header: "Gråbo - Centralstationen",
+        config: {
+            from: "740000513",   // ResRobot Station ID (or a comma-separated string of IDs)
+            to: "740000002", // ResRobot Station ID of destination (or a comma-separated string of IDs)
+            maximumEntries: 5,  // Number of departures to show on screen
+            truncateAfter: 5,   // A value > 0 will truncate direction name at first space after <value> characters. 0 = no truncation
+            apiKey: "81ac816d-b757-416d-889d-b69ee50b94c4"  // Your ResRobot apiKey
+        }
+    },
+	]
+
+};
+
+/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== 'undefined') {module.exports = config;}

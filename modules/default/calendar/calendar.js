@@ -20,7 +20,7 @@ Module.register("calendar",{
 		maxTitleLength: 25,
 		fetchInterval: 5 * 60 * 1000, // Update every 5 minutes.
 		animationSpeed: 2000,
-		fade: true,
+		fade: false,
 		urgency: 7,
 		timeFormat: "relative",
 		fadePoint: 0.25, // Start on 1/4th of the list.

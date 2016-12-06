@@ -21,7 +21,7 @@ Module.register("currentweather",{
 		showPeriod: true,
 		showPeriodUpper: false,
 		showWindDirection: true,
-		useBeaufort: true,
+		useBeaufort: false,
 		lang: config.language,
 
 		initialLoadDelay: 0, // 0 seconds delay
